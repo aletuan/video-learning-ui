@@ -1,0 +1,11 @@
+.videoSection {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1024px) {
+  .videoSection {
+    flex-direction: column;
+  }
+}
