@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Header from './Header';
 
 describe('Header Component', () => {
@@ -35,10 +35,10 @@ describe('Header Component', () => {
     const toggleButton = screen.getByRole('button', { name: /toggle sidebar/i });
     fireEvent.click(toggleButton);
     
-    // Wait for the animation delay
-    await new Promise(resolve => setTimeout(resolve, 100));
-    
-    expect(mockToggle).toHaveBeenCalledTimes(1);
+    // Wait for the callback to be called after animation delay
+    await waitFor(() => {
+      expect(mockToggle).toHaveBeenCalledTimes(1);
+    });
   });
 
   test('sign in and get started buttons are clickable', () => {

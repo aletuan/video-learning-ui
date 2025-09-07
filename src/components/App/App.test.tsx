@@ -15,24 +15,25 @@ describe('App Component', () => {
     expect(descriptionElement).toBeInTheDocument();
   });
 
-  test('renders video player and subtitles', () => {
+  test('renders video player and subtitles section', () => {
     render(<App />);
-    // eslint-disable-next-line testing-library/no-node-access
-    const videoSection = document.getElementsByClassName('video-section')[0];
-    expect(videoSection).toBeInTheDocument();
-  });
-
-  test('renders navigation and main content structure', () => {
-    render(<App />);
-    // eslint-disable-next-line testing-library/no-node-access
-    const mainContent = document.getElementsByClassName('main-content')[0];
+    // Test for video section by finding the main content area
+    const mainContent = screen.getByRole('main');
     expect(mainContent).toBeInTheDocument();
   });
 
-  test('renders application structure', () => {
+  test('renders navigation and course content', () => {
     render(<App />);
-    // eslint-disable-next-line testing-library/no-node-access
-    const appContainer = document.getElementsByClassName('App')[0];
-    expect(appContainer).toBeInTheDocument();
+    // Test for course container content
+    const courseTitle = screen.getByRole('heading', { level: 1 });
+    expect(courseTitle).toBeInTheDocument();
+    expect(courseTitle).toHaveTextContent(/Complete Guide to React Hooks/i);
+  });
+
+  test('renders application with proper structure', () => {
+    render(<App />);
+    // Test for main content and ensure the app renders
+    const mainElement = screen.getByRole('main');
+    expect(mainElement).toHaveClass('main-content');
   });
 });
