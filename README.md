@@ -29,17 +29,20 @@ A modern React TypeScript application for video-based learning with synchronized
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/aletuan/video-learning-ui.git
 cd video-learning-ui
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm start
 ```
@@ -49,17 +52,20 @@ The application will open at [http://localhost:3000](http://localhost:3000).
 ## Available Scripts
 
 ### `npm start`
+
 Runs the app in development mode with hot reloading.
 
 ### `npm test`
+
 Launches the test runner in interactive watch mode.
 
 ### `npm run build`
+
 Builds the app for production to the `build` folder with optimized performance.
 
 ## Project Structure
 
-```
+```text
 src/
   components/          # React components
     App/              # Main application component
