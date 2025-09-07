@@ -57,7 +57,6 @@ const DiscussionContent: React.FC<DiscussionContentProps> = ({
       
       <button 
         className={styles.btnPrimary} 
-        style={{marginTop: '20px'}} 
         onClick={handleButtonClick(onAddComment)}
       >
         Add Comment

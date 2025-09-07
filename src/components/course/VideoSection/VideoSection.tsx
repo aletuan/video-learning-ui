@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoPlayer from '../../VideoPlayer';
 import SubtitlesPanel from '../../SubtitlesPanel';
+import styles from './VideoSection.module.css';
 
 interface VideoSectionProps {
   isPlaying: boolean;
@@ -34,7 +35,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`video-section ${className}`}>
+    <div className={`${styles.videoSection} ${className}`}>
       <VideoPlayer 
         isPlaying={isPlaying}
         currentTime={currentTime}

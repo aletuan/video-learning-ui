@@ -31,23 +31,26 @@ const QuizContent: React.FC<QuizContentProps> = ({
         <div key={index} className={styles.quizQuestion}>
           <h4>{quiz.question}</h4>
           <div className={styles.quizOptions}>
-            {quiz.options.map((option, optionIndex) => (
-              <label key={optionIndex}>
-                <input 
-                  type="radio" 
-                  name={`q${index + 1}`} 
-                  value={option.value} 
-                /> 
-                {option.label}
-              </label>
-            ))}
+            {quiz.options.map((option, optionIndex) => {
+              const inputId = `q${index + 1}_option${optionIndex}`;
+              return (
+                <label key={optionIndex} htmlFor={inputId}>
+                  <input 
+                    id={inputId}
+                    type="radio" 
+                    name={`q${index + 1}`} 
+                    value={option.value} 
+                  /> 
+                  {option.label}
+                </label>
+              );
+            })}
           </div>
         </div>
       ))}
       
       <button 
         className={styles.btnPrimary} 
-        style={{marginTop: '20px'}} 
         onClick={handleButtonClick(onSubmit)}
       >
         Submit Quiz

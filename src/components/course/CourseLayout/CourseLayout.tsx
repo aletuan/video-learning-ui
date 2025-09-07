@@ -3,6 +3,7 @@ import CourseHeader from '../CourseHeader';
 import VideoSection from '../VideoSection';
 import TabNavigation from '../../TabNavigation';
 import ContentSection from '../../ContentSection';
+import styles from './CourseLayout.module.css';
 
 interface CourseLayoutProps {
   // Course data
@@ -47,7 +48,7 @@ const CourseLayout: React.FC<CourseLayoutProps> = ({
   onTabChange
 }) => {
   return (
-    <div className="course-container">
+    <div className={styles.courseContainer}>
       {/* Course Title and Description */}
       <CourseHeader 
         title={courseTitle}

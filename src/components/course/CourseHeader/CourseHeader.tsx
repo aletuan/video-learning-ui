@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './CourseHeader.module.css';
 
 interface CourseHeaderProps {
   title: string;
@@ -12,9 +13,9 @@ const CourseHeader: React.FC<CourseHeaderProps> = ({
   className = '' 
 }) => {
   return (
-    <div className={`course-header ${className}`}>
+    <div className={`${styles.courseHeader} ${className}`}>
       <h1>{title}</h1>
-      <p className="course-description">
+      <p className={styles.courseDescription}>
         {description}
       </p>
     </div>

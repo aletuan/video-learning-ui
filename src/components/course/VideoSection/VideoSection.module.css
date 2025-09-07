@@ -1,13 +1,11 @@
 .videoSection {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 24px;
+  margin-bottom: 32px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1024px) {
   .videoSection {
-    flex-direction: row;
-    gap: 2rem;
+    flex-direction: column;
   }
 }
