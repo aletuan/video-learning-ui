@@ -1,0 +1,155 @@
+/* Sidebar Styles */
+.sidebar {
+  width: 240px;
+  background: white;
+  border-right: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 20px;
+  margin-bottom: 20px;
+}
+
+.logo i {
+  font-size: 20px;
+  color: #6366f1;
+  margin-right: 8px;
+}
+
+.logo span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.mainNav, .navSection {
+  padding: 0 20px;
+}
+
+.navSection {
+  margin-top: 30px;
+}
+
+.navSection h4 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #6b7280;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.navItem:hover {
+  color: #374151;
+  background: #f9fafb;
+}
+
+.navItem.active {
+  color: #6366f1;
+  background: #eef2ff;
+}
+
+.navItem i {
+  width: 20px;
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+.navItem span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.navSection.bottom {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Mobile Sidebar Styles */
+.mobileSidebarHeader {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.mobileSidebarClose {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.mobileSidebarClose:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.desktopLogo {
+  display: flex;
+}
+
+/* Mobile responsive behavior */
+.mobileOpen {
+  transform: translateX(0);
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .desktopLogo {
+    display: none;
+  }
+  
+  .mobileSidebarHeader {
+    display: flex;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    width: 280px;
+    max-width: 85vw;
+  }
+  
+  .sidebar.mobileOpen {
+    transform: translateX(0);
+  }
+}
