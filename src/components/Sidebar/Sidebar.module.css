@@ -1,8 +1,8 @@
 /* Sidebar Styles */
 .sidebar {
   width: 240px;
-  background: white;
-  border-right: 1px solid #e5e5e5;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-primary);
   display: flex;
   flex-direction: column;
   padding: 20px 0;
@@ -10,6 +10,7 @@
   height: 100vh;
   overflow-y: auto;
   z-index: 100;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .logo {
@@ -21,14 +22,16 @@
 
 .logo i {
   font-size: 20px;
-  color: #6366f1;
+  color: var(--accent-primary);
   margin-right: 8px;
+  transition: color 0.3s ease;
 }
 
 .logo span {
   font-size: 16px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .mainNav, .navSection {
@@ -43,9 +46,10 @@
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #9ca3af;
+  color: var(--text-tertiary);
   margin-bottom: 12px;
   letter-spacing: 0.5px;
+  transition: color 0.3s ease;
 }
 
 .navItem {
@@ -53,7 +57,7 @@
   align-items: center;
   padding: 10px 0;
   text-decoration: none;
-  color: #6b7280;
+  color: var(--text-secondary);
   transition: all 0.2s ease;
   border-radius: 6px;
   background: none;
@@ -65,13 +69,13 @@
 }
 
 .navItem:hover {
-  color: #374151;
-  background: #f9fafb;
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
 }
 
 .navItem.active {
-  color: #6366f1;
-  background: #eef2ff;
+  color: var(--accent-primary);
+  background: var(--bg-tertiary);
 }
 
 .navItem i {
@@ -88,7 +92,8 @@
 .navSection.bottom {
   margin-top: auto;
   padding-top: 20px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--border-primary);
+  transition: border-color 0.3s ease;
 }
 
 /* Mobile Sidebar Styles */
@@ -97,15 +102,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--border-primary);
   margin-bottom: 20px;
+  transition: border-color 0.3s ease;
 }
 
 .mobileSidebarClose {
   background: none;
   border: none;
   font-size: 18px;
-  color: #6b7280;
+  color: var(--text-secondary);
   cursor: pointer;
   padding: 8px;
   border-radius: 4px;
@@ -113,8 +119,8 @@
 }
 
 .mobileSidebarClose:hover {
-  background: #f3f4f6;
-  color: #374151;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
 }
 
 .desktopLogo {
