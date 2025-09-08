@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { ThemeProvider } from '../../contexts/ThemeContext';
+import ErrorBoundary from '../ErrorBoundary';
 import Sidebar from '../Sidebar';
 import Header from '../Header';
 import CourseLayout from '../course/CourseLayout';
@@ -18,8 +19,9 @@ function App() {
   usePageAnimations();
 
   return (
-    <ThemeProvider>
-      <div className="App">
+    <ErrorBoundary>
+      <ThemeProvider>
+        <div className="App">
         {/* Mobile Sidebar Overlay */}
         {mobileSidebar.isOpen && (
           <div 
@@ -61,8 +63,9 @@ function App() {
             onTabChange={setActiveTab}
           />
         </main>
-      </div>
-    </ThemeProvider>
+        </div>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 
