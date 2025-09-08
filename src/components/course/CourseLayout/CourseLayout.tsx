@@ -4,25 +4,15 @@ import VideoSection from '../VideoSection';
 import TabNavigation from '../../TabNavigation';
 import ContentSection from '../../ContentSection';
 import styles from './CourseLayout.module.css';
+import { VideoConfig } from '../../../types/video.types';
 
 interface CourseLayoutProps {
-  // Course data
+  // Course data  
   courseTitle: string;
   courseDescription: string;
   
-  // Video player props
-  isPlaying: boolean;
-  currentTime: number;
-  duration: number;
-  volume: number;
-  isFullscreen: boolean;
-  onPlay: () => void;
-  onPause: () => void;
-  onSeek: (time: number) => void;
-  onVolumeChange: (volume: number) => void;
-  onRewind: () => void;
-  onForward: () => void;
-  onFullscreen: () => void;
+  // Video configuration
+  videoConfig?: VideoConfig;
   
   // Tab navigation
   activeTab: string;
@@ -32,18 +22,7 @@ interface CourseLayoutProps {
 const CourseLayout: React.FC<CourseLayoutProps> = ({
   courseTitle,
   courseDescription,
-  isPlaying,
-  currentTime,
-  duration,
-  volume,
-  isFullscreen,
-  onPlay,
-  onPause,
-  onSeek,
-  onVolumeChange,
-  onRewind,
-  onForward,
-  onFullscreen,
+  videoConfig,
   activeTab,
   onTabChange
 }) => {
@@ -58,18 +37,7 @@ const CourseLayout: React.FC<CourseLayoutProps> = ({
 
       {/* Video and Subtitles Section */}
       <VideoSection
-        isPlaying={isPlaying}
-        currentTime={currentTime}
-        duration={duration}
-        volume={volume}
-        isFullscreen={isFullscreen}
-        onPlay={onPlay}
-        onPause={onPause}
-        onSeek={onSeek}
-        onVolumeChange={onVolumeChange}
-        onRewind={onRewind}
-        onForward={onForward}
-        onFullscreen={onFullscreen}
+        videoConfig={videoConfig}
         className="animate-on-load"
       />
 

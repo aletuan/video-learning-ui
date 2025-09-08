@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import styles from './VideoPlayer.module.css';
 import { VideoConfig, VideoEvents } from '../../types/video.types';
 
-interface VideoPlayerProps extends VideoEvents {
+interface SimpleVideoPlayerProps extends VideoEvents {
   videoConfig?: VideoConfig;
   className?: string;
 }
 
-const VideoPlayer: React.FC<VideoPlayerProps> = ({
+const SimpleVideoPlayer: React.FC<SimpleVideoPlayerProps> = ({
   videoConfig,
   className = '',
   onPlay,
@@ -46,8 +46,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
             <small>{error}</small>
             <br />
             <small>URL: {videoConfig.videoSource.path}</small>
-            <br />
-            <small>Type: {videoConfig.videoSource.type}</small>
           </div>
         </div>
       </div>
@@ -56,7 +54,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
 
   return (
     <div className={`${styles.videoContainer} ${className}`}>
-      <div className={styles.videoPlayer} style={{ aspectRatio: 'unset' }}>
+      <div className={styles.videoPlayer}>
         <video
           src={videoConfig.videoSource.path}
           controls
@@ -64,12 +62,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           crossOrigin="anonymous"
           style={{ 
             width: '100%', 
-            height: 'auto',
-            minHeight: '300px',
-            maxHeight: '600px',
-            backgroundColor: '#000',
-            objectFit: 'contain',
-            borderRadius: '12px'
+            height: '300px',
+            backgroundColor: '#000' 
           }}
           onTimeUpdate={(e) => {
             const video = e.target as HTMLVideoElement;
@@ -99,7 +93,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           }}
           onError={(e) => {
             console.error('Video error:', e);
-            const errorMsg = `Failed to load video from ${videoConfig.videoSource.path}. Check console for details.`;
+            const errorMsg = `Failed to load video: ${videoConfig.videoSource.path}`;
             setError(errorMsg);
             onError?.(errorMsg);
           }}
@@ -111,4 +105,4 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   );
 };
 
-export default VideoPlayer;
+export default SimpleVideoPlayer;

@@ -6,14 +6,14 @@ import Sidebar from '../Sidebar';
 import Header from '../Header';
 import CourseLayout from '../course/CourseLayout';
 import useMobileSidebar from '../../hooks/useMobileSidebar';
-import useVideoPlayer from '../../hooks/useVideoPlayer';
 import usePageAnimations from '../../hooks/usePageAnimations';
+import { getCurrentVideo } from '../../data/videoConfig';
 
 function App() {
   const mobileSidebar = useMobileSidebar();
-  const videoPlayer = useVideoPlayer();
   const [activeTab, setActiveTab] = useState('Summary');
   const [activeNavItem, setActiveNavItem] = useState('Home');
+  const [currentVideo] = useState(() => getCurrentVideo());
   
   // Initialize page load animations
   usePageAnimations();
@@ -45,20 +45,9 @@ function App() {
 
           {/* Course Content */}
           <CourseLayout
-            courseTitle="Complete Guide to React Hooks"
-            courseDescription="Learn how to use React hooks effectively in your applications. This comprehensive tutorial covers useState, useEffect, and custom hooks."
-            isPlaying={videoPlayer.isPlaying}
-            currentTime={videoPlayer.currentTime}
-            duration={videoPlayer.duration}
-            volume={videoPlayer.volume}
-            isFullscreen={videoPlayer.isFullscreen}
-            onPlay={videoPlayer.actions.play}
-            onPause={videoPlayer.actions.pause}
-            onSeek={videoPlayer.actions.seek}
-            onVolumeChange={videoPlayer.actions.setVolume}
-            onRewind={() => videoPlayer.actions.seek(Math.max(0, videoPlayer.currentTime - 10))}
-            onForward={() => videoPlayer.actions.seek(Math.min(videoPlayer.duration, videoPlayer.currentTime + 10))}
-            onFullscreen={videoPlayer.actions.toggleFullscreen}
+            courseTitle={currentVideo.title}
+            courseDescription={currentVideo.metadata.description}
+            videoConfig={currentVideo}
             activeTab={activeTab}
             onTabChange={setActiveTab}
           />
