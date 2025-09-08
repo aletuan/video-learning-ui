@@ -20,7 +20,7 @@
   margin-bottom: 20px;
 }
 
-.logo i {
+.logo svg {
   font-size: 20px;
   color: var(--accent-primary);
   margin-right: 8px;
@@ -78,7 +78,7 @@
   background: var(--bg-tertiary);
 }
 
-.navItem i {
+.navItem svg {
   width: 20px;
   margin-right: 12px;
   font-size: 16px;

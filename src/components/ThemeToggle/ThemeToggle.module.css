@@ -22,10 +22,10 @@
   outline-offset: 2px;
 }
 
-.themeToggle i {
+.themeToggle svg {
   transition: transform 0.2s ease;
 }
 
-.themeToggle:hover i {
+.themeToggle:hover svg {
   transform: scale(1.1);
 }

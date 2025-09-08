@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from 'contexts/ThemeContext';
 import styles from './ThemeToggle.module.css';
 
@@ -12,7 +14,7 @@ const ThemeToggle: React.FC = () => {
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
       title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
-      <i className={theme === 'light' ? 'fas fa-moon' : 'fas fa-sun'}></i>
+      <FontAwesomeIcon icon={theme === 'light' ? faMoon : faSun} />
     </button>
   );
 };

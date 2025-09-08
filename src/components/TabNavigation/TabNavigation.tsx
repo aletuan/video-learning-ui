@@ -1,4 +1,12 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faFileText, 
+  faQuestionCircle, 
+  faComments, 
+  faBook, 
+  faThumbsUp 
+} from '@fortawesome/free-solid-svg-icons';
 import styles from './TabNavigation.module.css';
 import { useButtonAnimation } from '../../hooks/useButtonAnimation';
 
@@ -19,7 +27,7 @@ const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, onTabChange })
           className={`${styles.tab} ${activeTab === tab ? styles.active : ''}`}
           onClick={handleButtonClick(() => onTabChange(tab))}
         >
-          <i className={`fas fa-${getTabIcon(tab)}`}></i>
+          <FontAwesomeIcon icon={getTabIcon(tab)} />
           {tab}
         </button>
       ))}
@@ -27,14 +35,14 @@ const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, onTabChange })
   );
 };
 
-const getTabIcon = (tab: string): string => {
+const getTabIcon = (tab: string) => {
   switch (tab) {
-    case 'Summary': return 'file-text';
-    case 'Quiz': return 'question-circle';
-    case 'Discussion': return 'comments';
-    case 'Resources': return 'book';
-    case 'Similar': return 'thumbs-up';
-    default: return 'file-text';
+    case 'Summary': return faFileText;
+    case 'Quiz': return faQuestionCircle;
+    case 'Discussion': return faComments;
+    case 'Resources': return faBook;
+    case 'Similar': return faThumbsUp;
+    default: return faFileText;
   }
 };
 

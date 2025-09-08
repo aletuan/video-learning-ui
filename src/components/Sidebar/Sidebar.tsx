@@ -1,4 +1,25 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faGraduationCap, 
+  faTimes, 
+  faHome, 
+  faSearch, 
+  faBookmark, 
+  faHeart,
+  faBook,
+  faVideo,
+  faFire,
+  faTh,
+  faComments,
+  faUsers,
+  faPlus,
+  faCog,
+  faBookOpen,
+  faChartLine,
+  faTags,
+  faPlusCircle
+} from '@fortawesome/free-solid-svg-icons';
 import styles from './Sidebar.module.css';
 import { useButtonAnimation } from '../../hooks/useButtonAnimation';
 
@@ -16,18 +37,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, activeItem, onItemCl
       {/* Mobile Sidebar Header */}
       <div className={styles.mobileSidebarHeader}>
         <div className={styles.logo}>
-          <i className="fas fa-graduation-cap"></i>
+          <FontAwesomeIcon icon={faGraduationCap} />
           <span>Learning Platform</span>
         </div>
         <button className={styles.mobileSidebarClose} onClick={handleButtonClick(onClose)}>
-          <i className="fas fa-times"></i>
+          <FontAwesomeIcon icon={faTimes} />
           <span className="sr-only">Close Sidebar</span>
         </button>
       </div>
 
       {/* Desktop Logo */}
       <div className={`${styles.logo} ${styles.desktopLogo}`}>
-        <i className="fas fa-graduation-cap"></i>
+        <FontAwesomeIcon icon={faGraduationCap} />
         <span>Learning Platform</span>
       </div>
       
@@ -38,7 +59,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, activeItem, onItemCl
           className={`${styles.navItem} ${activeItem === 'Home' ? styles.active : ''}`}
           onClick={handleButtonClick(() => onItemClick?.('Home'))}
         >
-          <i className="fas fa-home"></i>
+          <FontAwesomeIcon icon={faHome} />
           <span>Home</span>
         </button>
         <button 
@@ -46,7 +67,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, activeItem, onItemCl
           className={`${styles.navItem} ${activeItem === 'Discover' ? styles.active : ''}`}
           onClick={handleButtonClick(() => onItemClick?.('Discover'))}
         >
-          <i className="fas fa-search"></i>
+          <FontAwesomeIcon icon={faSearch} />
           <span>Discover</span>
         </button>
         <button 
@@ -54,7 +75,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, activeItem, onItemCl
           className={`${styles.navItem} ${activeItem === 'My Learning' ? styles.active : ''}`}
           onClick={handleButtonClick(() => onItemClick?.('My Learning'))}
         >
-          <i className="fas fa-book"></i>
+          <FontAwesomeIcon icon={faBook} />
           <span>My Learning</span>
         </button>
         <button 
@@ -62,7 +83,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, activeItem, onItemCl
           className={`${styles.navItem} ${activeItem === 'Favorites' ? styles.active : ''}`}
           onClick={handleButtonClick(() => onItemClick?.('Favorites'))}
         >
-          <i className="fas fa-heart"></i>
+          <FontAwesomeIcon icon={faHeart} />
           <span>Favorites</span>
         </button>
       </nav>
@@ -71,19 +92,19 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, activeItem, onItemCl
       <div className={styles.navSection}>
         <h4>Library</h4>
         <button type="button" className={styles.navItem}>
-          <i className="fas fa-book-open"></i>
+          <FontAwesomeIcon icon={faBookOpen} />
           <span>All Courses</span>
         </button>
         <button type="button" className={styles.navItem}>
-          <i className="fas fa-video"></i>
+          <FontAwesomeIcon icon={faVideo} />
           <span>Video Library</span>
         </button>
         <button type="button" className={styles.navItem}>
-          <i className="fas fa-chart-line"></i>
+          <FontAwesomeIcon icon={faChartLine} />
           <span>Trending</span>
         </button>
         <button type="button" className={styles.navItem}>
-          <i className="fas fa-tags"></i>
+          <FontAwesomeIcon icon={faTags} />
           <span>Categories</span>
         </button>
       </div>
@@ -92,15 +113,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, activeItem, onItemCl
       <div className={styles.navSection}>
         <h4>Community</h4>
         <button type="button" className={styles.navItem}>
-          <i className="fas fa-comments"></i>
+          <FontAwesomeIcon icon={faComments} />
           <span>Discussions</span>
         </button>
         <button type="button" className={styles.navItem}>
-          <i className="fas fa-users"></i>
+          <FontAwesomeIcon icon={faUsers} />
           <span>Study Groups</span>
         </button>
         <button type="button" className={styles.navItem}>
-          <i className="fas fa-plus-circle"></i>
+          <FontAwesomeIcon icon={faPlusCircle} />
           <span>Create Content</span>
         </button>
       </div>
@@ -108,7 +129,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, activeItem, onItemCl
       {/* Settings Section */}
       <div className={`${styles.navSection} ${styles.bottom}`}>
         <button type="button" className={styles.navItem}>
-          <i className="fas fa-cog"></i>
+          <FontAwesomeIcon icon={faCog} />
           <span>Settings</span>
         </button>
       </div>
