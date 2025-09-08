@@ -1,35 +1,45 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { ThemeProvider } from '../../contexts/ThemeContext';
 import Header from './Header';
+
+// Helper function to render component with ThemeProvider
+const renderWithTheme = (component: React.ReactElement) => {
+  return render(
+    <ThemeProvider>
+      {component}
+    </ThemeProvider>
+  );
+};
 
 describe('Header Component', () => {
   test('renders learning platform text', () => {
-    render(<Header />);
+    renderWithTheme(<Header />);
     const platformText = screen.getByText(/Learning Platform/i);
     expect(platformText).toBeInTheDocument();
   });
 
   test('renders sign in button', () => {
-    render(<Header />);
+    renderWithTheme(<Header />);
     const signInButton = screen.getByText(/Sign In/i);
     expect(signInButton).toBeInTheDocument();
   });
 
   test('renders get started button', () => {
-    render(<Header />);
+    renderWithTheme(<Header />);
     const getStartedButton = screen.getByText(/Get Started/i);
     expect(getStartedButton).toBeInTheDocument();
   });
 
   test('renders mobile sidebar toggle button', () => {
-    render(<Header />);
+    renderWithTheme(<Header />);
     const toggleButton = screen.getByText(/Toggle Sidebar/i);
     expect(toggleButton).toBeInTheDocument();
   });
 
   test('calls onSidebarToggle when toggle button is clicked', async () => {
     const mockToggle = jest.fn();
-    render(<Header onSidebarToggle={mockToggle} />);
+    renderWithTheme(<Header onSidebarToggle={mockToggle} />);
     
     // Find button by role and accessible name
     const toggleButton = screen.getByRole('button', { name: /toggle sidebar/i });
@@ -42,7 +52,7 @@ describe('Header Component', () => {
   });
 
   test('sign in and get started buttons are clickable', () => {
-    render(<Header />);
+    renderWithTheme(<Header />);
     
     const signInButton = screen.getByText(/Sign In/i);
     const getStartedButton = screen.getByText(/Get Started/i);

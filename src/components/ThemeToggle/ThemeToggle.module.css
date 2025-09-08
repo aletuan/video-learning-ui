@@ -1,0 +1,31 @@
+.themeToggle {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themeToggle:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.themeToggle:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.themeToggle svg {
+  transition: transform 0.2s ease;
+}
+
+.themeToggle:hover svg {
+  transform: scale(1.1);
+}

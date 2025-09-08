@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Header.module.css';
 import { useButtonAnimation } from '../../hooks/useButtonAnimation';
+import ThemeToggle from '../ThemeToggle';
 
 interface HeaderProps {
   onSidebarToggle?: () => void;
@@ -22,6 +23,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
         <span>Learning Platform</span>
       </div>
       <div className={styles.headerRight}>
+        <ThemeToggle />
         <button className={styles.btnSecondary} onClick={handleButtonClick()}>Sign In</button>
         <button className={styles.btnPrimary} onClick={handleButtonClick()}>Get Started</button>
       </div>
