@@ -1,13 +1,15 @@
 .courseHeader h1 {
   font-size: 32px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 12px;
+  transition: color 0.3s ease;
 }
 
 .courseDescription {
   font-size: 16px;
-  color: #6b7280;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 32px;
+  transition: color 0.3s ease;
 }

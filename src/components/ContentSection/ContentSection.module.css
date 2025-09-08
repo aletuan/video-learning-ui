@@ -1,31 +1,35 @@
 /* Content Section */
 .contentSection {
-  background: white;
+  background: var(--bg-elevated);
   border-radius: 12px;
   padding: 24px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Summary Section */
 .summarySection h2 {
   font-size: 24px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 8px;
+  transition: color 0.3s ease;
 }
 
 .summarySection h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 24px;
+  transition: color 0.3s ease;
 }
 
 .keyPoints h4 {
   font-size: 16px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 12px;
+  transition: color 0.3s ease;
 }
 
 .pointsList {
@@ -38,13 +42,14 @@
   padding: 8px 0;
   padding-left: 20px;
   position: relative;
-  color: #4b5563;
+  color: var(--text-secondary);
   line-height: 1.6;
+  transition: color 0.3s ease;
 }
 
 .pointsList li::before {
   content: '•';
-  color: #6366f1;
+  color: var(--accent-primary);
   position: absolute;
   left: 0;
   font-weight: bold;
@@ -53,8 +58,9 @@
 .topicsCovered h4 {
   font-size: 16px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 12px;
+  transition: color 0.3s ease;
 }
 
 .topicTags {
@@ -65,11 +71,12 @@
 
 .tag {
   padding: 6px 12px;
-  background: #f3f4f6;
-  color: #374151;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
   border-radius: 20px;
   font-size: 12px;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 /* Quiz Section */
@@ -83,8 +90,9 @@
 .quizSection h3 {
   font-size: 18px;
   font-weight: 500;
-  color: #6b7280;
+  color: var(--text-secondary);
   margin-bottom: 32px;
+  transition: color 0.3s ease;
 }
 
 .quizQuestion {
@@ -94,8 +102,9 @@
 .quizQuestion h4 {
   font-size: 16px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 16px;
+  transition: color 0.3s ease;
 }
 
 .quizOptions {
@@ -114,7 +123,7 @@
 }
 
 .quizOptions label:hover {
-  background-color: #f3f4f6;
+  background-color: var(--bg-tertiary);
 }
 
 .quizOptions input[type="radio"] {
@@ -141,23 +150,26 @@
 .discussionSection h2 {
   font-size: 24px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 8px;
+  transition: color 0.3s ease;
 }
 
 .discussionSection h3 {
   font-size: 18px;
   font-weight: 500;
-  color: #6b7280;
+  color: var(--text-secondary);
   margin-bottom: 32px;
+  transition: color 0.3s ease;
 }
 
 .discussionPost {
-  background: #f9fafb;
+  background: var(--bg-tertiary);
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-primary);
+  transition: all 0.3s ease;
 }
 
 .postAuthor {
@@ -182,18 +194,21 @@
 
 .postAuthor span:first-of-type {
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .postTime {
-  color: #6b7280;
+  color: var(--text-secondary);
   font-size: 14px;
+  transition: color 0.3s ease;
 }
 
 .discussionPost p {
-  color: #4b5563;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 16px;
+  transition: color 0.3s ease;
 }
 
 .postActions {
@@ -204,7 +219,7 @@
 .postActions button {
   background: none;
   border: none;
-  color: #6b7280;
+  color: var(--text-secondary);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -216,23 +231,25 @@
 }
 
 .postActions button:hover {
-  background: #f3f4f6;
-  color: #1f2937;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
 }
 
 /* Resources Section */
 .resourcesSection h2 {
   font-size: 24px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 8px;
+  transition: color 0.3s ease;
 }
 
 .resourcesSection h3 {
   font-size: 18px;
   font-weight: 500;
-  color: #6b7280;
+  color: var(--text-secondary);
   margin-bottom: 32px;
+  transition: color 0.3s ease;
 }
 
 .resourceList {
@@ -246,20 +263,20 @@
   align-items: center;
   gap: 16px;
   padding: 20px;
-  background: #f9fafb;
+  background: var(--bg-tertiary);
   border-radius: 12px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-primary);
   transition: all 0.2s ease;
 }
 
 .resourceItem:hover {
-  border-color: #d1d5db;
+  border-color: var(--border-secondary);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .resourceItem i {
   font-size: 24px;
-  color: #6366f1;
+  color: var(--accent-primary);
   flex-shrink: 0;
   width: 32px;
   text-align: center;
@@ -272,14 +289,16 @@
 .resourceItem h4 {
   font-size: 16px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 4px;
+  transition: color 0.3s ease;
 }
 
 .resourceItem p {
-  color: #6b7280;
+  color: var(--text-secondary);
   font-size: 14px;
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 .btnSecondary {
@@ -303,8 +322,9 @@
 .similarSection h2 {
   font-size: 24px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 24px;
+  transition: color 0.3s ease;
 }
 
 .videoCard {
@@ -322,7 +342,7 @@
 }
 
 .videoCard:hover {
-  background: #f9fafb;
+  background: var(--bg-tertiary);
 }
 
 .videoThumbnail {
@@ -377,9 +397,10 @@
 .videoInfo h4 {
   font-size: 14px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 6px;
   line-height: 1.4;
+  transition: color 0.3s ease;
 }
 
 .videoMeta {
@@ -387,7 +408,8 @@
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  color: #6b7280;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .videoMeta .duration {
@@ -395,11 +417,11 @@
 }
 
 .videoMeta .separator {
-  color: #9ca3af;
+  color: var(--text-tertiary);
 }
 
 .videoMeta .views {
-  color: #6b7280;
+  color: var(--text-secondary);
 }
 
 /* Other Tab Sections */
@@ -408,13 +430,15 @@
 .resourcesSection h2 {
   font-size: 24px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 16px;
+  transition: color 0.3s ease;
 }
 
 .quizSection p,
 .discussionSection p,
 .resourcesSection p {
-  color: #6b7280;
+  color: var(--text-secondary);
   line-height: 1.6;
+  transition: color 0.3s ease;
 }

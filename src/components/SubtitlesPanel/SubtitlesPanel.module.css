@@ -1,22 +1,25 @@
 /* Subtitles Panel */
 .subtitlesPanel {
   flex: 1;
-  background: #f9fafb;
+  background: var(--bg-elevated);
   border-radius: 12px;
   padding: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .subtitlesHeader h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 4px;
+  transition: color 0.3s ease;
 }
 
 .subtitlesHeader p {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--text-secondary);
   margin-bottom: 20px;
+  transition: color 0.3s ease;
 }
 
 /* Subtitle Items */
@@ -32,41 +35,44 @@
 }
 
 .subtitleItem:hover {
-  background: #f3f4f6;
+  background: var(--bg-tertiary);
 }
 
 .subtitleItem.active {
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .subtitleItem .time {
   font-size: 12px;
   font-weight: 500;
-  color: #6b7280;
+  color: var(--text-secondary);
   min-width: 32px;
   margin-top: 2px;
+  transition: color 0.3s ease;
 }
 
 .subtitleItem .dot {
   width: 6px;
   height: 6px;
-  background: #d1d5db;
+  background: var(--border-secondary);
   border-radius: 50%;
   margin-top: 8px;
   flex-shrink: 0;
+  transition: background-color 0.3s ease;
 }
 
 .subtitleItem.active .dot {
-  background: #6366f1;
+  background: var(--accent-primary);
 }
 
 .subtitleItem p {
   font-size: 14px;
-  color: #374151;
+  color: var(--text-primary);
   line-height: 1.5;
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 /* Mobile responsive */
