@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+Welcome to JavaScript Fundamentals. I'm going to show you the basics of JavaScript programming.
+
+00:00:05.000 --> 00:00:10.000
+JavaScript is a programming language that runs in the browser and on servers.
+
+00:00:10.000 --> 00:00:15.000
+Let's start with variables. We can declare variables using let, const, or var.
+
+00:00:15.000 --> 00:00:20.000
+The let keyword creates a block-scoped variable that can be reassigned.
+
+00:00:20.000 --> 00:00:25.000
+The const keyword creates a constant that cannot be reassigned after declaration.
+
+00:00:25.000 --> 00:00:30.000
+Here's an example: let message equals "Hello World".
+
+00:00:30.000 --> 00:00:35.000
+Functions are reusable blocks of code. We can declare them using the function keyword.
+
+00:00:35.000 --> 00:00:40.000
+Arrow functions provide a shorter syntax: const add equals parentheses a comma b parentheses arrow a plus b.
+
+00:00:40.000 --> 00:00:45.000
+Objects store multiple values as key-value pairs inside curly braces.
+
+00:00:45.000 --> 00:00:50.000
+Arrays store ordered lists of items inside square brackets.
+
+00:00:50.000 --> 00:00:55.000
+We can access object properties using dot notation or bracket notation.
+
+00:00:55.000 --> 00:01:00.000
+Array methods like map, filter, and reduce help us manipulate data efficiently.
+
+00:01:00.000 --> 00:01:05.000
+Conditional statements like if-else help us make decisions in our code.
+
+00:01:05.000 --> 00:01:10.000
+Loops like for and while help us repeat operations multiple times.
+
+00:01:10.000 --> 00:01:15.000
+That covers the fundamental concepts of JavaScript programming.

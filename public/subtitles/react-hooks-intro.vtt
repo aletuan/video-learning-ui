@@ -1,0 +1,49 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+Welcome to this comprehensive introduction to React Hooks.
+
+00:00:05.000 --> 00:00:10.000
+Hooks are functions that let you use state and other React features in functional components.
+
+00:00:10.000 --> 00:00:15.000
+Before hooks, you had to write class components to use state and lifecycle methods.
+
+00:00:15.000 --> 00:00:20.000
+The most commonly used hook is useState for managing component state.
+
+00:00:20.000 --> 00:00:25.000
+Here's how to declare state: const [count, setCount] = useState(0).
+
+00:00:25.000 --> 00:00:30.000
+useState returns an array with the current state value and a setter function.
+
+00:00:30.000 --> 00:00:35.000
+The useEffect hook lets you perform side effects in functional components.
+
+00:00:35.000 --> 00:00:40.000
+Use it for data fetching, subscriptions, or manually changing the DOM.
+
+00:00:40.000 --> 00:00:45.000
+useEffect runs after every render by default, but you can control this.
+
+00:00:45.000 --> 00:00:50.000
+The dependency array in useEffect controls when the effect runs.
+
+00:00:50.000 --> 00:00:55.000
+Custom hooks let you extract component logic into reusable functions.
+
+00:00:55.000 --> 00:01:00.000
+Custom hook names must start with "use" and can call other hooks.
+
+00:01:00.000 --> 00:01:05.000
+Other useful hooks include useContext, useReducer, and useMemo.
+
+00:01:05.000 --> 00:01:10.000
+Always follow the Rules of Hooks: only call hooks at the top level.
+
+00:01:10.000 --> 00:01:15.000
+Hooks make functional components more powerful and easier to test.
+
+00:01:15.000 --> 00:01:20.000
+That's your introduction to React Hooks. Happy coding!

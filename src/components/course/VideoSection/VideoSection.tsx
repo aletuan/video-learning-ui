@@ -1,59 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import VideoPlayer from '../../VideoPlayer';
 import SubtitlesPanel from '../../SubtitlesPanel';
 import styles from './VideoSection.module.css';
+import { VideoConfig } from '../../../types/video.types';
 
 interface VideoSectionProps {
-  isPlaying: boolean;
-  currentTime: number;
-  duration: number;
-  volume: number;
-  isFullscreen: boolean;
-  onPlay: () => void;
-  onPause: () => void;
-  onSeek: (time: number) => void;
-  onVolumeChange: (volume: number) => void;
-  onRewind: () => void;
-  onForward: () => void;
-  onFullscreen: () => void;
+  videoConfig?: VideoConfig;
   className?: string;
 }
 
 const VideoSection: React.FC<VideoSectionProps> = ({
-  isPlaying,
-  currentTime,
-  duration,
-  volume,
-  isFullscreen,
-  onPlay,
-  onPause,
-  onSeek,
-  onVolumeChange,
-  onRewind,
-  onForward,
-  onFullscreen,
+  videoConfig,
   className = ''
 }) => {
+  const [currentTime, setCurrentTime] = useState(0);
+
+  const handleTimeUpdate = (time: number) => {
+    setCurrentTime(time);
+  };
+
+  const handleSeek = (time: number) => {
+    setCurrentTime(time);
+  };
+
   return (
     <div className={`${styles.videoSection} ${className}`}>
       <VideoPlayer 
-        isPlaying={isPlaying}
-        currentTime={currentTime}
-        duration={duration}
-        volume={volume}
-        isFullscreen={isFullscreen}
-        onPlay={onPlay}
-        onPause={onPause}
-        onSeek={onSeek}
-        onVolumeChange={onVolumeChange}
-        onRewind={onRewind}
-        onForward={onForward}
-        onFullscreen={onFullscreen}
+        videoConfig={videoConfig}
+        onTimeUpdate={handleTimeUpdate}
+        onSeek={handleSeek}
       />
 
       <SubtitlesPanel 
+        videoConfig={videoConfig}
         currentTime={currentTime}
-        onSeek={onSeek}
+        onSeek={handleSeek}
       />
     </div>
   );

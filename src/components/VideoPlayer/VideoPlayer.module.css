@@ -1,6 +1,6 @@
 /* Video Player Container */
 .videoContainer {
-  flex: 2;
+  width: 100%;
 }
 
 .videoPlayer {
@@ -8,8 +8,16 @@
   border-radius: 12px;
   overflow: hidden;
   position: relative;
+  height: var(--video-height, auto);
   aspect-ratio: 16/9;
   transition: background-color 0.3s ease;
+}
+
+.videoElement {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--video-bg);
 }
 
 .videoPlaceholder {
@@ -20,6 +28,51 @@
   color: var(--text-tertiary);
   font-size: 64px;
   transition: color 0.3s ease;
+  text-align: center;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+}
+
+.loading i {
+  font-size: 32px;
+  color: var(--accent-primary);
+}
+
+.loading p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #ef4444;
+  text-align: center;
+  padding: 20px;
+}
+
+.errorState i {
+  font-size: 48px;
+}
+
+.errorState p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.errorState small {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  max-width: 200px;
 }
 
 /* Video Controls */
@@ -45,8 +98,13 @@
   transition: background 0.2s ease;
 }
 
-.videoControls button:hover {
+.videoControls button:hover:not(:disabled) {
   background: var(--accent-hover);
+}
+
+.videoControls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .rewindBtn, .forwardBtn {
