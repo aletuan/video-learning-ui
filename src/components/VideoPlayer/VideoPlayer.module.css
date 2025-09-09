@@ -1,6 +1,6 @@
 /* Video Player Container */
 .videoContainer {
-  flex: 2;
+  width: 100%;
 }
 
 .videoPlayer {
@@ -8,6 +8,7 @@
   border-radius: 12px;
   overflow: hidden;
   position: relative;
+  height: var(--video-height, auto);
   aspect-ratio: 16/9;
   transition: background-color 0.3s ease;
 }

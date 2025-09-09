@@ -36,7 +36,7 @@ export const videoLibrary: VideoConfig[] = [
     title: 'Introduction to React Hooks',
     videoSource: {
       type: 'url',
-      path: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
+      path: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
       mimeType: 'video/mp4',
       quality: '720p'
     },

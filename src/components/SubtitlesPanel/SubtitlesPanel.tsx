@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './SubtitlesPanel.module.css';
 import { SubtitleCue, VideoConfig } from '../../types/video.types';
 import { SubtitleService } from '../../services/SubtitleService';
@@ -14,6 +14,8 @@ const SubtitlesPanel: React.FC<SubtitlesPanelProps> = ({ videoConfig, currentTim
   const [subtitles, setSubtitles] = useState<SubtitleCue[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const subtitlesContentRef = useRef<HTMLDivElement>(null);
+  const activeSubtitleRef = useRef<HTMLDivElement>(null);
 
   // Load subtitles when video config changes
   useEffect(() => {
@@ -42,6 +44,25 @@ const SubtitlesPanel: React.FC<SubtitlesPanelProps> = ({ videoConfig, currentTim
   }, [videoConfig, subtitleService]);
 
   const activeSubtitle = subtitleService.getCurrentSubtitle(subtitles, currentTime);
+
+  // Auto-scroll to active subtitle
+  useEffect(() => {
+    if (activeSubtitleRef.current && subtitlesContentRef.current) {
+      const activeElement = activeSubtitleRef.current;
+      const container = subtitlesContentRef.current;
+      
+      const containerRect = container.getBoundingClientRect();
+      const activeRect = activeElement.getBoundingClientRect();
+      
+      // Check if active element is out of view
+      if (activeRect.top < containerRect.top || activeRect.bottom > containerRect.bottom) {
+        activeElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+    }
+  }, [activeSubtitle]);
 
   const handleSubtitleClick = (time: number) => {
     onSeek(time);
@@ -99,20 +120,22 @@ const SubtitlesPanel: React.FC<SubtitlesPanelProps> = ({ videoConfig, currentTim
         <h3>Subtitles</h3>
         <p>Real-time synchronized transcription</p>
       </div>
-      <div className={styles.subtitlesContent}>
-        {subtitles.map((subtitle, index) => (
-          <div
-            key={index}
-            className={`${styles.subtitleItem} ${
-              activeSubtitle && activeSubtitle.startTime === subtitle.startTime ? styles.active : ''
-            }`}
-            onClick={() => handleSubtitleClick(subtitle.startTime)}
-          >
-            <span className={styles.time}>{subtitle.timeDisplay}</span>
-            <span className={styles.dot}></span>
-            <p>{subtitle.text}</p>
-          </div>
-        ))}
+      <div className={styles.subtitlesContent} ref={subtitlesContentRef}>
+        {subtitles.map((subtitle, index) => {
+          const isActive = activeSubtitle && activeSubtitle.startTime === subtitle.startTime;
+          return (
+            <div
+              key={index}
+              ref={isActive ? activeSubtitleRef : null}
+              className={`${styles.subtitleItem} ${isActive ? styles.active : ''}`}
+              onClick={() => handleSubtitleClick(subtitle.startTime)}
+            >
+              <span className={styles.time}>{subtitle.timeDisplay}</span>
+              <span className={styles.dot}></span>
+              <p>{subtitle.text}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

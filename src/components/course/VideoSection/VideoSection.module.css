@@ -1,11 +1,15 @@
 .videoSection {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   gap: 24px;
   margin-bottom: 32px;
+  align-items: start;
+  --video-height: calc((100vw - 68px - 48px) * 2 / 3 * 9 / 16);
 }
 
 @media (max-width: 1024px) {
   .videoSection {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
   }
 }
