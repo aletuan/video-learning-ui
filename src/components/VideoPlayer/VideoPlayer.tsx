@@ -64,12 +64,9 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           crossOrigin="anonymous"
           style={{ 
             width: '100%', 
-            height: 'auto',
-            minHeight: '300px',
-            maxHeight: '600px',
+            height: '100%',
             backgroundColor: '#000',
-            objectFit: 'contain',
-            borderRadius: '12px'
+            objectFit: 'cover'
           }}
           onTimeUpdate={(e) => {
             const video = e.target as HTMLVideoElement;
